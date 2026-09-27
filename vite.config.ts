@@ -18,4 +18,17 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id: string) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react-router')) return 'vendor'
+            if (id.includes('react-dom')) return 'vendor'
+            if (id.includes('react')) return 'vendor'
+          }
+        },
+      },
+    },
+  },
 })

@@ -61,7 +61,13 @@ export const BlogDetailPage = () => {
         Back to Blogs
       </Link>
 
-      <img src={post.imageUrl} alt={post.title} className="mb-6 h-64 w-full rounded-xl object-cover sm:h-80" />
+      <img
+        src={post.imageUrl}
+        alt={post.title}
+        loading="lazy"
+        decoding="async"
+        className="mb-6 h-64 w-full rounded-xl object-cover sm:h-80"
+      />
 
       <div className="mb-4 flex items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
         <span>{post.author}</span>
